@@ -10,7 +10,7 @@
 
     <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
     <artifactId>boxworkmanagement-parent</artifactId>
-    <version>17.0.13-SNAPSHOT</version>
+    <version>17.0.12</version>
     <packaging>pom</packaging>
 
 
