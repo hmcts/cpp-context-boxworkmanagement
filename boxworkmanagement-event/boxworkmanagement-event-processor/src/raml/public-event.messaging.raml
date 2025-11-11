@@ -1,0 +1,12 @@
+#%RAML 0.8
+title: RAML for events triggered by boxwork camunda event processor
+baseUri: message://event/processor/message/boxworkmanagement
+version: v1
+/public.event:
+  get:
+    responses:
+      200:
+        body:
+          application/vnd.public.boxwork-application-completed+json:
+            schema: !include json/schema/public.boxwork-application-completed.json
+            example: !include json/schema/public.boxwork-application-completed.json
