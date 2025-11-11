@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1abt1sx" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.2">
+  <bpmn:process id="boxworkApplication" name="boxwork application&#10;" isExecutable="true" camunda:isStartableInTasklist="false">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1wommh5</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1wommh5" sourceRef="StartEvent_1" targetRef="createBoxworkTask" />
+    <bpmn:sequenceFlow id="SequenceFlow_0q41xzl" sourceRef="boxworkHearingResultedTask" targetRef="EndEvent_1wciust" />
+    <bpmn:sequenceFlow id="SequenceFlow_0b2q0kw" sourceRef="createBoxworkTask" targetRef="boxworkHearingResultedTask" />
+    <bpmn:serviceTask id="createBoxworkTask" name="Create Boxwork task" camunda:delegateExpression="${createBoxworkTask}">
+      <bpmn:incoming>SequenceFlow_1wommh5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0b2q0kw</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:receiveTask id="boxworkHearingResultedTask" name="Boxwork hearing resulted ">
+      <bpmn:incoming>SequenceFlow_0b2q0kw</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0q41xzl</bpmn:outgoing>
+    </bpmn:receiveTask>
+    <bpmn:endEvent id="EndEvent_1wciust">
+      <bpmn:incoming>SequenceFlow_0q41xzl</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="boxworkApplication">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="157" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1wommh5_di" bpmnElement="SequenceFlow_1wommh5">
+        <di:waypoint x="193" y="121" />
+        <di:waypoint x="269" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0q41xzl_di" bpmnElement="SequenceFlow_0q41xzl">
+        <di:waypoint x="535" y="121" />
+        <di:waypoint x="641" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0b2q0kw_di" bpmnElement="SequenceFlow_0b2q0kw">
+        <di:waypoint x="369" y="121" />
+        <di:waypoint x="435" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_05so3lg_di" bpmnElement="createBoxworkTask">
+        <dc:Bounds x="269" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReceiveTask_1162ije_di" bpmnElement="boxworkHearingResultedTask">
+        <dc:Bounds x="435" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1e6wiwf_di" bpmnElement="EndEvent_1wciust">
+        <dc:Bounds x="641" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

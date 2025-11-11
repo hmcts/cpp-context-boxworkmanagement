@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>uk.gov.moj.cpp.common</groupId>
+        <artifactId>service-parent-pom</artifactId>
+        <version>17.101.0</version>
+    </parent>
+
+    <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
+    <artifactId>boxworkmanagement-parent</artifactId>
+    <version>17.0.12-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <name>Boxwork Management - Parent</name>
+    <description>The Box Work Management project serves as Camunda service.</description>
+
+    <properties>
+        <sonar.jacoco.itReportPath>${project.basedir}/../target/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.report.export.path>sonar-report.json</sonar.report.export.path>
+        <sonar.coverage.exclusions>**/external/*</sonar.coverage.exclusions>
+        <sonar.cpd.exclusions>**/external/*</sonar.cpd.exclusions>
+        <sonar.scm.provider>git</sonar.scm.provider>
+        <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
+        <usersgroups.version>17.0.23</usersgroups.version>
+        <cpp.camunda.version>7.17.0</cpp.camunda.version>
+        <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
+        <jgitflow-maven-plugin.version>1.0-m5.1</jgitflow-maven-plugin.version>
+    </properties>
+
+    <modules>
+        <module>boxworkmanagement-integration-test</module>
+        <module>boxworkmanagement-event</module>
+        <module>boxworkmanagement-domain</module>
+        <module>boxworkmanagement-service</module>
+        <module>rest-client-camunda</module>
+        <module>boxworkmanagement-healthchecks</module>
+
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.camunda.bpm</groupId>
+                <artifactId>camunda-bom</artifactId>
+                <version>${cpp.camunda.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archiveClasses>true</archiveClasses>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>${jgitflow-maven-plugin.version}</version>
+                <configuration>
+                    <flowInitContext>
+                        <masterBranchName>dev/release</masterBranchName>
+                        <developBranchName>main</developBranchName>
+                        <featureBranchPrefix>dev/feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>dev/release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>dev/hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>v</versionTagPrefix>
+                    </flowInitContext>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <enableSshAgent>true</enableSshAgent>
+                    <pushReleases>true</pushReleases>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>${mvn.site.url}</url>
+        </site>
+    </distributionManagement>
+</project>

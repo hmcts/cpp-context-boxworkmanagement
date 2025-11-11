@@ -1,0 +1,18 @@
+---
+resource_descriptor:
+  spec_version: '1.0.0'
+  version: '${project.version}'
+
+  resources:
+    name: java:/app/DS.workmanagement
+      type: xa-datasource
+      setup:
+      - type: liquibase
+        maven:
+          groupId: uk.gov.justice.services
+          artifactId: cpp-camunda-liquibase
+          type: jar
+          version: '${cpp.camunda.version}'
+      - type: liquibase
+    - name: public.event
+      type: topic

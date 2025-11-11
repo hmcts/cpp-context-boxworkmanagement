@@ -1,0 +1,16 @@
+#%RAML 0.8
+title: RAML for events listened by boxworkmanagement event processor
+baseUri: message://event/processor/message/boxworkmanagement
+
+version: v1
+/public.event:
+  post:
+    body:
+      application/vnd.public.progression.boxwork-application-referred+json:
+        schema: !include json/schema/public.progression.boxwork-application-referred.json
+        example: !include json/public.progression.boxwork-application-referred.json
+      application/vnd.public.events.hearing.hearing-resulted+json:
+        schema: !include json/schema/public.events.hearing.hearing-resulted.json
+        example: !include json/public.events.hearing.hearing-resulted.json
+
+
