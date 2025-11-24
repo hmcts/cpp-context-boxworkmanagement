@@ -5,12 +5,12 @@
     <parent>
         <groupId>uk.gov.moj.cpp.common</groupId>
         <artifactId>service-parent-pom</artifactId>
-        <version>17.101.0</version>
+        <version>17.103.5</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
     <artifactId>boxworkmanagement-parent</artifactId>
-    <version>17.0.13-SNAPSHOT</version>
+    <version>17.0.13-PEG-2739-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
