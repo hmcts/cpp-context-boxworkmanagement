@@ -3,7 +3,7 @@
     <parent>
         <artifactId>boxworkmanagement-domain</artifactId>
         <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
-        <version>17.103.15-SNAPSHOT</version>
+        <version>17.103.15-PEG-2848-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

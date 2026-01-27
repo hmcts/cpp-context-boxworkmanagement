@@ -1,7 +1,7 @@
 package uk.gov.moj.cpp.camunda.rest;
 
 import static java.util.Collections.emptySet;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.ArgumentMatchers.eq;
@@ -23,7 +23,7 @@ import uk.gov.justice.services.test.utils.core.enveloper.EnveloperFactory;
 
 import java.time.ZonedDateTime;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
@@ -164,7 +164,7 @@ public class CamundaRestClientProcessorTest {
     private Response mockSynchronousResponse() {
         final Response mockedResponse = mock(Response.class);
         when(mockedResponse.getStatus()).thenReturn(HttpStatus.SC_OK);
-        when(mockedResponse.readEntity(String.class)).thenReturn(Json.createObjectBuilder().add("_metadata", "").build().toString());
+        when(mockedResponse.readEntity(String.class)).thenReturn(JsonObjects.createObjectBuilder().add("_metadata", "").build().toString());
         return mockedResponse;
     }
 
