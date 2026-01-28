@@ -23,7 +23,6 @@ import uk.gov.justice.services.test.utils.core.enveloper.EnveloperFactory;
 
 import java.time.ZonedDateTime;
 
-import  uk.gov.justice.services.messaging.JsonObjects;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
@@ -164,7 +163,7 @@ public class CamundaRestClientProcessorTest {
     private Response mockSynchronousResponse() {
         final Response mockedResponse = mock(Response.class);
         when(mockedResponse.getStatus()).thenReturn(HttpStatus.SC_OK);
-        when(mockedResponse.readEntity(String.class)).thenReturn(JsonObjects.createObjectBuilder().add("_metadata", "").build().toString());
+        when(mockedResponse.readEntity(String.class)).thenReturn(createObjectBuilder().add("_metadata", "").build().toString());
         return mockedResponse;
     }
 
