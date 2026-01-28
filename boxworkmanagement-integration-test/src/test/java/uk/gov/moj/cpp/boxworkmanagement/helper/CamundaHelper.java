@@ -7,6 +7,7 @@ import static java.net.HttpURLConnection.HTTP_NO_CONTENT;
 import static javax.ws.rs.core.Response.Status.OK;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static uk.gov.justice.services.messaging.JsonObjects.createReader;
 import static uk.gov.justice.services.test.utils.core.http.RequestParamsBuilder.requestParams;
 import static uk.gov.justice.services.test.utils.core.http.RestPoller.poll;
 import static uk.gov.justice.services.test.utils.core.matchers.ResponsePayloadMatcher.payload;
@@ -18,7 +19,6 @@ import uk.gov.justice.services.test.utils.core.rest.RestClient;
 import java.io.StringReader;
 import java.util.Optional;
 
-import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
@@ -105,7 +105,7 @@ public class CamundaHelper {
 
     public static void deleteAllProcessInstances() {
         final ResponseData responseData = getAllProcessInstances();
-        final JsonArray processInstances = Json.createReader(new StringReader(responseData.getPayload())).readArray();
+        final JsonArray processInstances = createReader(new StringReader(responseData.getPayload())).readArray();
         LOGGER.info("ProcessInstances={}", processInstances);
         processInstances.stream().forEach(pi -> deleteProcessInstance(((JsonObject) pi).getString("id")));
     }
@@ -116,7 +116,7 @@ public class CamundaHelper {
     }
 
     private static JsonArray getJsonArray(String payload) {
-        try (JsonReader reader = Json.createReader(new StringReader(payload))) {
+        try (JsonReader reader = createReader(new StringReader(payload))) {
             return reader.readArray();
         }
     }
