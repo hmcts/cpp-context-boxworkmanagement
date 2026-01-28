@@ -18,7 +18,7 @@ import uk.gov.justice.services.test.utils.core.rest.RestClient;
 import java.io.StringReader;
 import java.util.Optional;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
@@ -105,7 +105,7 @@ public class CamundaHelper {
 
     public static void deleteAllProcessInstances() {
         final ResponseData responseData = getAllProcessInstances();
-        final JsonArray processInstances = Json.createReader(new StringReader(responseData.getPayload())).readArray();
+        final JsonArray processInstances = JsonObjects.createReader(new StringReader(responseData.getPayload())).readArray();
         LOGGER.info("ProcessInstances={}", processInstances);
         processInstances.stream().forEach(pi -> deleteProcessInstance(((JsonObject) pi).getString("id")));
     }
@@ -116,7 +116,7 @@ public class CamundaHelper {
     }
 
     private static JsonArray getJsonArray(String payload) {
-        try (JsonReader reader = Json.createReader(new StringReader(payload))) {
+        try (JsonReader reader = JsonObjects.createReader(new StringReader(payload))) {
             return reader.readArray();
         }
     }
