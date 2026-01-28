@@ -19,7 +19,6 @@ import uk.gov.justice.services.test.utils.core.rest.RestClient;
 import java.io.StringReader;
 import java.util.Optional;
 
-import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
