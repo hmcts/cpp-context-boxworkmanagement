@@ -5,10 +5,10 @@
     <parent>
         <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
         <artifactId>boxworkmanagement-event</artifactId>
-        <version>17.104.15-1784-SNAPSHOT</version>
+        <version>17.104.16--SNAPSHOT</version>
     </parent>
     <artifactId>boxworkmanagement-event-processor</artifactId>
-    <version>17.104.15-1784-SNAPSHOT</version>
+    <version>17.104.16--SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
