@@ -4,7 +4,7 @@ import static java.lang.String.format;
 
 import uk.gov.justice.services.jdbc.persistence.JdbcRepositoryException;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;

@@ -1,6 +1,6 @@
 package uk.gov.moj.cpp.boxworkmanagement.event.processor.delegate;
 
-import javax.inject.Named;
+import jakarta.inject.Named;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.slf4j.Logger;

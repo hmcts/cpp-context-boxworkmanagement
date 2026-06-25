@@ -5,8 +5,8 @@ import uk.gov.justice.services.clients.core.EndpointDefinition;
 import uk.gov.justice.services.common.configuration.Value;
 import uk.gov.justice.services.messaging.JsonEnvelope;
 
-import javax.enterprise.inject.Alternative;
-import javax.inject.Inject;
+import jakarta.enterprise.inject.Alternative;
+import jakarta.inject.Inject;
 
 /**
  * Extension of the {@link DefaultRestClientProcessor} that provides support for overwriting the baseUri
