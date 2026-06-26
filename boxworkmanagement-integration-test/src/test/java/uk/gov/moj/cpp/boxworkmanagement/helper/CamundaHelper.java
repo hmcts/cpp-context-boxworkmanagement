@@ -4,7 +4,7 @@ package uk.gov.moj.cpp.boxworkmanagement.helper;
 import static com.jayway.jsonpath.matchers.JsonPathMatchers.withJsonPath;
 import static java.lang.String.format;
 import static java.net.HttpURLConnection.HTTP_NO_CONTENT;
-import static javax.ws.rs.core.Response.Status.OK;
+import static jakarta.ws.rs.core.Response.Status.OK;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static uk.gov.justice.services.messaging.JsonObjects.createReader;
@@ -19,11 +19,11 @@ import uk.gov.justice.services.test.utils.core.rest.RestClient;
 import java.io.StringReader;
 import java.util.Optional;
 
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
-import javax.json.JsonValue;
-import javax.ws.rs.core.Response;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonReader;
+import jakarta.json.JsonValue;
+import jakarta.ws.rs.core.Response;
 
 import org.hamcrest.Matcher;
 import org.slf4j.Logger;

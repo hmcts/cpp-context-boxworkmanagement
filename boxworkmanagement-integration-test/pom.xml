@@ -6,7 +6,7 @@
     <parent>
         <artifactId>boxworkmanagement-parent</artifactId>
         <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
-        <version>17.104.17-SNAPSHOT</version>
+        <version>25.104.0-M1-SNAPSHOT</version>
     </parent>
     <artifactId>boxworkmanagement-integration-test</artifactId>
     <dependencies>
@@ -25,6 +25,12 @@
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.artemis</groupId>
+            <artifactId>artemis-jakarta-client</artifactId>
+            <version>${artemis.version}</version>
             <scope>test</scope>
         </dependency>
 

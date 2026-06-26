@@ -15,7 +15,7 @@ import uk.gov.moj.cpp.external.Hearing;
 import uk.gov.moj.cpp.external.HearingResulted;
 import java.time.LocalDateTime;
 import java.util.List;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import com.google.common.base.Strings;
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.runtime.Execution;
