@@ -6,7 +6,7 @@
     <parent>
         <artifactId>boxworkmanagement-parent</artifactId>
         <groupId>uk.gov.moj.cpp.boxworkmanagement</groupId>
-        <version>25.104.1-M3-SNAPSHOT</version>
+        <version>25.104.2-M3-SNAPSHOT</version>
     </parent>
     <artifactId>boxworkmanagement-integration-test</artifactId>
     <dependencies>
